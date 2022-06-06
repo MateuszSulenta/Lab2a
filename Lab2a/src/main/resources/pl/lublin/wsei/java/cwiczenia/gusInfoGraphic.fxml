@@ -7,6 +7,6 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lublin.wsei.java.cwiczenia.HelloController">
    <children>
       <Button layoutX="72.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnOpenFIleAction" prefHeight="25.0" prefWidth="107.0" text="Otwóz plik" textFill="#f20000" />
-      <Label fx:id="IbFile" layoutX="212.0" layoutY="209.0" prefHeight="25.0" prefWidth="531.0" style="-fx-font-style: italic;" text="Proszę wczytać plik..." />
+      <Label fx:id="lbFile" layoutX="212.0" layoutY="209.0" prefHeight="25.0" prefWidth="531.0" style="-fx-font-style: italic;" text="Proszę wczytać plik..." />
    </children>
 </AnchorPane>
