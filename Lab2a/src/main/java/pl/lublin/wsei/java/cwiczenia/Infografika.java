@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
         public String tytul;
         public String AdresStrony;
         public String adresMiniaturki;
+        public String adresStrony;
 
         public Infografika(String tekst){
 

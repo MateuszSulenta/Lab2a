@@ -1,5 +1,6 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import javafx.application.HostServices;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.File;
@@ -21,6 +23,7 @@ public class HelloController {
 
     @FXML
     private Label welcomeText;
+    private Infografika selInfografika;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -48,6 +51,7 @@ public class HelloController {
                     public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
                         int index = t1.intValue();
                         if (index != -1) {
+                            selInfografika = igList.infografiki.get(index);
                             txtAdresStrony.setText(igList.infografiki.get(index).AdresStrony);
                             Image image = new Image(igList.infografiki.get(index).adresMiniaturki);
                         }
@@ -55,6 +59,7 @@ public class HelloController {
                             txtAdresStrony.setText("");
                             imgMiniaturka.setImage(null);
                             Object selfInfografika = null;
+                            selInfografika = null;
                         }
                         
 
@@ -75,4 +80,16 @@ public class HelloController {
             lbFile.setText("Proszę wczytać plik...");
         }
     }
-}
+    public void btnZaladujStrone(ActionEvent actionEvent) {
+        if (selInfografika != null)
+            hostServices.showDocument(selInfografika.adresStrony);
+    }
+    private Stage stage;
+    private HostServices hostServices;
+            public void setStage(Stage stage) {
+                this.stage = stage;
+            }
+        public void setHostServices(HostServices hostServices){
+            this.hostServices = hostServices;
+                }
+            }
