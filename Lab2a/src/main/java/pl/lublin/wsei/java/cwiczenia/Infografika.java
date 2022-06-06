@@ -6,6 +6,9 @@ import java.util.regex.Pattern;
 
 
     public class Infografika{
+        public String tytul;
+        public String AdresStrony;
+
         public Infografika(String tekst){
 
         String tytul;
