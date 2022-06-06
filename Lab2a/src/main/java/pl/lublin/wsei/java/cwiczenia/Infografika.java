@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
     public class Infografika{
         public String tytul;
         public String AdresStrony;
+        public String adresMiniaturki;
 
         public Infografika(String tekst){
 

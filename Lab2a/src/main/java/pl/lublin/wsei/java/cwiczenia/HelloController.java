@@ -10,7 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
+
+import javax.swing.*;
 import java.io.File;
 
 public class HelloController {
@@ -28,6 +31,7 @@ public class HelloController {
     public TextField txtAdresStrony;
     public Button btnPokazInfografike;
     public Button btnPrzejdzDoStrony;
+    ImageIcon imgMiniaturka;
 
     GusInfoGraphicList igList;
     FileChooser fileChooser = new FileChooser();
@@ -45,10 +49,15 @@ public class HelloController {
                         int index = t1.intValue();
                         if (index != -1) {
                             txtAdresStrony.setText(igList.infografiki.get(index).AdresStrony);
+                            Image image = new Image(igList.infografiki.get(index).adresMiniaturki);
                         }
                         else {
                             txtAdresStrony.setText("");
+                            imgMiniaturka.setImage(null);
+                            Object selfInfografika = null;
                         }
+                        
+
                     }
                 }
         );
