@@ -7,6 +7,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -17,6 +20,7 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 
 public class HelloController {
 
@@ -92,4 +96,29 @@ public class HelloController {
         public void setHostServices(HostServices hostServices){
             this.hostServices = hostServices;
                 }
-            }
+
+                public void btnPokazOnAction(ActionEvent actionEvent){
+                try{
+                    FXMLLoader loader = new FXMLoader(getClass().getResource("imgViewer.fxml"));
+                    Parent root = loader.load();
+                    ImgViewer viewer = loader.getController();
+                            if (selInfografika != null) {
+                                Image img = new Image(selInfografika.adresGrafiki);
+                                viewer.imgView.setFitWidth(img.getWidth());
+                                viewer.imgView.setFitHeight(img.getHeight());
+                                viewer.imgView.setImage(img);
+
+                            }
+                            Stage stage = new Stage();
+                            stage.setTitle("Podgląd infografiki");
+                            stage.setScene(new Scene(root, 900, 800));
+                            stage.show();
+
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+
+                }
+                }
+
+}

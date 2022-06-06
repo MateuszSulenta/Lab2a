@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
         public String AdresStrony;
         public String adresMiniaturki;
         public String adresStrony;
+        public String adresGrafiki;
 
         public Infografika(String tekst){
 
